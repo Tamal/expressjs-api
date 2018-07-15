@@ -1,0 +1,25 @@
+# Configuration for a standard environment on Google Cloud Platform.
+
+runtime: nodejs8
+
+service: express-svc
+
+# Force https for all requests.
+handlers:
+  - url: .*
+    script: None
+    secure: always
+
+env_variables:
+    NODE_ENV: staging
+    MONGODB_URI_LOCAL: mongodb://staging.url:27017
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 3
+  min_idle_instances: 1
+  target_cpu_utilization: 0.7
+  max_concurrent_requests: 25
+
+inbound_services:
+- warmup

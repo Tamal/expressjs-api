@@ -1,0 +1,6 @@
+{
+  "appName": "Awesome Microservice APIs",
+  "gcloud": {
+    "projectId": "express-stage-api-201004"
+  }
+}

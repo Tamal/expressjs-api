@@ -1,0 +1,26 @@
+# Configuration for a standard environment on Google Cloud Platform.
+
+runtime: nodejs8
+
+service: express-svc
+
+# Force https for all requests.
+handlers:
+  - url: .*
+    script: None
+    secure: always
+
+env_variables:
+    NODE_ENV: production
+
+instance_class: F2
+
+automatic_scaling:
+  min_instances: 2
+  max_instances: 50
+  min_idle_instances: 2
+  target_cpu_utilization: 0.7
+  max_concurrent_requests: 50
+
+inbound_services:
+- warmup
