@@ -6,8 +6,8 @@ An example REST API using Expressjs and TypeScript
 
 ```
 git clone ...
-yarn
-yarn watch
+npm i
+npm run watch
 ```
 
 ## How to deploy in Google App Engine?
