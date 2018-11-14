@@ -7,7 +7,7 @@ service: express-svc
 # Force https for all requests.
 handlers:
   - url: .*
-    script: None
+    script: auto
     secure: always
 
 env_variables:
